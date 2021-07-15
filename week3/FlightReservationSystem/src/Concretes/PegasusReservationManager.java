@@ -7,8 +7,8 @@ public class PegasusReservationManager extends BaseReservationManager{
 
 	int choice;
 	
-	public PegasusReservationManager(int numberOfSeats) {
-		super(numberOfSeats);
+	public PegasusReservationManager(int numberOfSeats, int businessSeatsCount) {
+		super(numberOfSeats, businessSeatsCount);
 	}
 	
 	@Override
