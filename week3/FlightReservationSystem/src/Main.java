@@ -11,10 +11,10 @@ public class Main {
 		
 		Scanner scan=new Scanner(System.in);
 
-		BaseReservationManager thy=new THYReservationManager(10);
+		BaseReservationManager thy=new THYReservationManager(10, 5);
 		
 		
-		BaseReservationManager pegasus=new PegasusReservationManager(10);
+		BaseReservationManager pegasus=new PegasusReservationManager(10, 3);
 		
 		
 		int choice;
