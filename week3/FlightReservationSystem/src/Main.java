@@ -32,12 +32,12 @@ public class Main {
 	            {
 	           
 	                case 0:
-	                	thy.getReservation(new Flight(1,"Ýstanbul-Londra","01.08.2021","13.00"));
+	                	thy.getReservation(new Flight(1,"Istanbul-Londra","01.08.2021","13.00"));
 	                    
 	                break;
 	                
 	                case 1 :
-	                	pegasus.getReservation(new Flight(2,"Ýstanbul-Hollywood","18.07.2021","02.00"));
+	                	pegasus.getReservation(new Flight(2,"Istanbul-Hollywood","18.07.2021","02.00"));
 	                	
 	                break;
 	                
