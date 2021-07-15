@@ -8,6 +8,7 @@ public abstract class BaseReservationManager implements ReservationService {
 	
 	private int numberOfSeats;
 	protected boolean[] seats;
+	private int businessSeatsCount;
 	
 	public BaseReservationManager() {
 		int numberOfSeats=10;
@@ -17,8 +18,7 @@ public abstract class BaseReservationManager implements ReservationService {
             seats[i]=true;
 	}
 	
-	public BaseReservationManager(int numberOfSeats) {
-		
+	public BaseReservationManager(int numberOfSeats, int businessSeatsCount) {
 		if(numberOfSeats<10) {
 			System.out.println("Seat number error! Number of seats automatically assigned to 10");
 			this.numberOfSeats=10;
@@ -31,6 +31,9 @@ public abstract class BaseReservationManager implements ReservationService {
 		seats=new boolean[this.numberOfSeats];
         for (int i = 0; i < this.numberOfSeats; i++)
             seats[i]=true;
+		
+		this.businessSeatsCount = businessSeatsCount
+
 	}
 
 	public int getNumberOfSeats() {
@@ -40,7 +43,7 @@ public abstract class BaseReservationManager implements ReservationService {
 		
 	
 	public boolean isEconomySeatsFull() {
-		for (int i = 5; i < seats.length; i++) {
+		for (int i = businessSeatsCount+1; i < seats.length; i++) {
             if(seats[i])
                 return false;
         }
@@ -50,7 +53,7 @@ public abstract class BaseReservationManager implements ReservationService {
 	
 	public boolean isBusinessSeatsFull() {
 		
-	    for (int i = 0; i < 5; i++) {
+	    for (int i = 0; i < businessSeatsCount ; i++) {
 	            if(seats[i])
 	                return false;
 	        }
