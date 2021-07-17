@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public abstract class BaseReservationManager implements ReservationService {
 
-    protected Scanner scan=new Scanner(System.in);
+    protected static Scanner scan=new Scanner(System.in);
 	
 	private int numberOfSeats;
 	protected boolean[] seats;
@@ -19,6 +19,7 @@ public abstract class BaseReservationManager implements ReservationService {
 	}
 	
 	public BaseReservationManager(int numberOfSeats, int businessSeatsCount) {
+		
 		if(numberOfSeats<10) {
 			System.out.println("Seat number error! Number of seats automatically assigned to 10");
 			this.numberOfSeats=10;
@@ -31,9 +32,8 @@ public abstract class BaseReservationManager implements ReservationService {
 		seats=new boolean[this.numberOfSeats];
         for (int i = 0; i < this.numberOfSeats; i++)
             seats[i]=true;
-		
-		this.businessSeatsCount = businessSeatsCount
-
+        
+        this.businessSeatsCount=businessSeatsCount;
 	}
 
 	public int getNumberOfSeats() {
@@ -53,7 +53,7 @@ public abstract class BaseReservationManager implements ReservationService {
 	
 	public boolean isBusinessSeatsFull() {
 		
-	    for (int i = 0; i < businessSeatsCount ; i++) {
+	    for (int i = 0; i < businessSeatsCount; i++) {
 	            if(seats[i])
 	                return false;
 	        }
@@ -68,6 +68,7 @@ public abstract class BaseReservationManager implements ReservationService {
         }
         return true;
 	}
+	
 	
 	
 }

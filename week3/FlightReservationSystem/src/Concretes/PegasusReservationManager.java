@@ -7,8 +7,8 @@ public class PegasusReservationManager extends BaseReservationManager{
 
 	int choice;
 	
-	public PegasusReservationManager(int numberOfSeats, int businessSeatsCount) {
-		super(numberOfSeats, businessSeatsCount);
+	public PegasusReservationManager(int numberOfSeats,int businessSeatsCount) {
+		super(numberOfSeats,businessSeatsCount);
 	}
 	
 	@Override
@@ -38,10 +38,12 @@ public class PegasusReservationManager extends BaseReservationManager{
 		else {
 			System.out.println("Please select from available seats");
 			for(int i=0;i<5;i++) {
-				if(seats[i]==false) {
-					System.out.print(i+" ");
+				if(seats[i]==true) {
+					System.out.print(i+1+" ");
 				}
 			}
+			
+			System.out.println("\n");
 			
 			int selectedSeat=scan.nextInt();
 			
@@ -61,8 +63,8 @@ public class PegasusReservationManager extends BaseReservationManager{
 		else {
 			System.out.println("Please select from available seats");
 			for(int i=5;i<seats.length;i++) {
-				if(seats[i]==false) {
-					System.out.print(i+" ");
+				if(seats[i]==true) {
+					System.out.print(i+1+" ");
 				}
 			}
 			

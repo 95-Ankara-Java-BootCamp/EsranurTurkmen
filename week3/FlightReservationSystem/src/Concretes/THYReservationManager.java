@@ -7,8 +7,8 @@ public class THYReservationManager extends BaseReservationManager {
 
 	int choice;
 	
-	public THYReservationManager(int numberOfSeats) {
-		super(numberOfSeats);
+	public THYReservationManager(int numberOfSeats,int businessSeatsCount) {
+		super(numberOfSeats,businessSeatsCount);
 	}
 	
 	@Override
@@ -38,11 +38,13 @@ public class THYReservationManager extends BaseReservationManager {
 		else {
 			System.out.println("Please select from available seats");
 			for(int i=0;i<5;i++) {
-				if(seats[i]==false) {
-					System.out.print(i+" ");
+				if(seats[i]==true) {
+					System.out.print(i+1+" ");
+					
 				}
 			}
 			
+			System.out.println("\n");
 			int selectedSeat=scan.nextInt();
 			
 			System.out.println("Number of seat "+selectedSeat+" was reserved in your name on the "+flight.getTime()
@@ -61,8 +63,8 @@ public class THYReservationManager extends BaseReservationManager {
 		else {
 			System.out.println("Please select from available seats");
 			for(int i=5;i<seats.length;i++) {
-				if(seats[i]==false) {
-					System.out.print(i+" ");
+				if(seats[i]==true) {
+					System.out.print(i+1+" ");
 				}
 			}
 			
